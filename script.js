@@ -1,8 +1,8 @@
 // Datos de ejemplo de productos
 const products = [
-    { id: 1, name: 'Producto 1', price: 10 },
-    { id: 2, name: 'Producto 2', price: 20 },
-    { id: 3, name: 'Producto 3', price: 30 }
+    { id: 1, name: 'Stratocaster', price: 10000 },
+    { id: 2, name: 'Fender', price: 200 },
+    { id: 3, name: 'ibanez', price: 500 }
 ];
 
 // Inicialización del carrito de compras
