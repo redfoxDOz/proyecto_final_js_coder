@@ -1,3 +1,1 @@
-swal.fire ({
-title: " Welcome to the jungle"
-});
+Swal.fire("Welcome to the Jungle");
