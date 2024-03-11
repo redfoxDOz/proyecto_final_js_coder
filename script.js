@@ -27,6 +27,12 @@ function addToCart(productId) {
     cart.push(product);
     displayCart();
 }
+ // Limpiar el carrito
+ function clearCart() {
+    cart = [];
+    displayCart();
+    localStorage.removeItem('cart'); 
+}
 
 // mostrar el contenido del carrito de compras
 function displayCart() {
