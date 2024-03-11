@@ -24,12 +24,11 @@
             <h2>Carrito</h2>
             <ul id="cart-items"></ul>
             <p>Total: $<span id="cart-total">0.00</span></p>
-            <button id="checkout" class="btn btn-primary">Pagar</button>
+            <button id="checkout" class="btn btn-primary" onclick="checkout()">Pagar</button>
         </div>
         <!-- Botón para limpiar el carrito -->
         <button onclick="clearCart()" class="btn btn-danger">Limpiar Carrito</button>
 
-       
         <div id="products">
             <h2>Productos</h2>
             <ul id="product-list">
@@ -38,6 +37,5 @@
         </div>
     </div>
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
