@@ -1,8 +1,9 @@
+
 // Datos de ejemplo de productos
 const products = [
     { id: 1, name: 'Stratocaster', price: 10000 },
-    { id: 2, name: 'Fender', price: 200 },
-    { id: 3, name: 'ibanez', price: 500 }
+    { id: 2, name: 'Fender', price: 20000 },
+    { id: 3, name: 'ibanez', price: 50000 }
 ];
 
 // Inicialización del carrito de compras
@@ -48,12 +49,13 @@ function removeFromCart(productId) {
     }
 }
 
-// Función para procesar el pago (puede personalizarse según tus necesidades)
-function checkout() {
+// Función para procesar el pago 
+function checkout () {
+   
     alert('¡Gracias por tu compra!');
     cart = [];
     displayCart();
 }
-
 // Mostrar productos al cargar la página
 displayProducts();
+
