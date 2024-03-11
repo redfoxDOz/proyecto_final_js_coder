@@ -1,15 +1,16 @@
 
-// Datos de ejemplo de productos
+
+// Productos
 const products = [
     { id: 1, name: 'Stratocaster', price: 10000 },
     { id: 2, name: 'Fender', price: 20000 },
     { id: 3, name: 'ibanez', price: 50000 }
 ];
 
-// Inicialización del carrito de compras
+// carrito de compras
 let cart = [];
 
-// Función para mostrar los productos disponibles
+//  mostrar los productos disponibles
 function displayProducts() {
     const productList = document.getElementById('product-list');
     productList.innerHTML = '';
@@ -20,14 +21,14 @@ function displayProducts() {
     });
 }
 
-// Función para agregar un producto al carrito de compras
+// Agregar  producto al carrito de compras
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     cart.push(product);
     displayCart();
 }
 
-// Función para mostrar el contenido del carrito de compras
+// mostrar el contenido del carrito de compras
 function displayCart() {
     const cartItems = document.getElementById('cart-items');
     cartItems.innerHTML = '';
@@ -38,9 +39,12 @@ function displayCart() {
     });
     const total = cart.reduce((acc, curr) => acc + curr.price, 0);
     document.getElementById('cart-total').textContent = total.toFixed(2);
+
+     // Guardar carrito en localStorage
+     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Función para quitar un producto del carrito de compras
+//  quitar un producto del carrito de compras
 function removeFromCart(productId) {
     const index = cart.findIndex(item => item.id === productId);
     if (index !== -1) {
@@ -48,14 +52,27 @@ function removeFromCart(productId) {
         displayCart();
     }
 }
-
-// Función para procesar el pago 
-function checkout () {
-   
-    alert('¡Gracias por tu compra!');
-    cart = [];
-    displayCart();
+// procesar el pago 
+function checkout() {
+    console.log('Checkout ejecutado'); // 
+    if (cart.length === 0) {
+        alert('No tienes nada en tu carrito.');
+    } else {
+        cart = [];
+        displayCart();
+        alert('¡Pagado! Gracias por comprar.');
+    }
 }
+// el carrito desde localStorage al cargar la página
+function loadCartFromLocalStorage() {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        displayCart();
+    }
+}
+// Llamar a la función para cargar el carrito desde localStorage al cargar la página
+loadCartFromLocalStorage();
 // Mostrar productos al cargar la página
 displayProducts();
 

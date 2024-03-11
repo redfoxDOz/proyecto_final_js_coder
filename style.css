@@ -20,7 +20,7 @@ ul {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
-    padding: 0;
+    padding: auto;
    
 }
 
@@ -34,5 +34,5 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #042649;
 }
